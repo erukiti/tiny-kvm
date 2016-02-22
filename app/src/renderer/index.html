@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" href="./index.css"> -->
+<body>
+
+<table>
+  <thad>
+    <tr>
+      <th>選択</th>
+      <th>ポート名</th>
+      <th>会社</th>
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: ports">
+    <tr>
+      <td><input type="radio" name="ports" data-bind="value: name, selectedValue: $parent.@portName, attr: { id: 'ports -' + $index }"></td>
+      <td><span data-bind="text: name, command: using"></span> (<span data-bind="text: manufacturer"></span>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div data-bind="text: portName"></div>
+
+<script>
+  require('./index.js');
+</script>
+</body>
+</html>
